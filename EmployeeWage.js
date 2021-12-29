@@ -1,3 +1,14 @@
+getWorkHours=(empCheck)=>{
+   switch(empCheck){
+      case IS_PART_TIME:
+         return PART_TIME_HOURS;
+      case IS_FULL_TIME:
+         return FULL_TIME_HOURS;
+      default:
+         return IS_ABSENT;
+   }
+}
+
 const IS_ABSENT = 0;
 const IS_PART_TIME = 1;
 const IS_FULL_TIME = 2;
@@ -9,17 +20,9 @@ let empHours=0;
 
 let empCheck = Math.floor(Math.random()*10)%3;
 
-switch(empCheck){
-   case IS_PART_TIME:
-      empHours=PART_TIME_HOURS;
-      break;
-   case IS_FULL_TIME:
-      empHours=FULL_TIME_HOURS;
-      break;
-   default:
-      empHours=IS_ABSENT;
-      break;
-}
-
+empHours=getWorkHours(empCheck);
 let empWage=WAGE_PER_HOUR*empHours;
 console.log("Employee wage : "+empWage);
+
+
+
