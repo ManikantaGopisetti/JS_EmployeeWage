@@ -27,5 +27,6 @@ while(empHours<=MAX_WORKING_HOURS && totalWorkingDays<NUM_OF_WORKING_DAYS){
    totalWorkingDays++;
 }
 let empWage=WAGE_PER_HOUR*empHours;
-console.log("Working hours in a month : "+empHours);
+console.log("Total working days in a month : "+totalWorkingDays);
+console.log("Total Working hours in a month : "+empHours);
 console.log("Employee wage for a month : "+empWage);
